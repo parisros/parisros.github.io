@@ -1,0 +1,1478 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>www.xunjuba.com_视频官网_原创高清内容平台</title>
+<meta name="description" content="www.xunjuba.com 官方网站，专注原创高清视频内容与创作者社区，提供精品视频、企业动态与品牌故事，打造值得信赖的视频内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172033'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%2340e0d0' stroke-width='4'/%3E%3Cpath d='M27 24l14 8-14 8z' fill='%2340e0d0'/%3E%3C/svg%3E">
+<style>
+:root{
+  --xun-bg:#0e1524;
+  --xun-bg2:#131c30;
+  --xun-panel:#182338;
+  --xun-panel2:#1e2a44;
+  --xun-line:#2a3854;
+  --xun-text:#e8eef9;
+  --xun-muted:#95a4bf;
+  --xun-accent:#40e0d0;
+  --xun-accent2:#7c8cff;
+  --xun-warm:#ffb454;
+  --xun-radius:14px;
+  --xun-sticky:112px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--xun-bg);
+  color:var(--xun-text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.xun-wrap{width:min(1200px,calc(100% - 40px));margin:0 auto}
+.xun-section{padding:64px 0;border-bottom:1px solid var(--xun-line)}
+.xun-eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:.22em;
+  color:var(--xun-accent);text-transform:uppercase;margin-bottom:12px;
+  font-weight:600;
+}
+h2.xun-h2{font-size:clamp(24px,3.2vw,36px);line-height:1.3;font-weight:800;letter-spacing:-.01em}
+.xun-sub{color:var(--xun-muted);margin-top:12px;font-size:15px;max-width:760px}
+.xun-sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:34px}
+
+/* ============ 吸顶：公告条 + 页头 ============ */
+.xun-sticky-shell{
+  position:sticky;top:0;z-index:120;
+  backdrop-filter:blur(14px);
+  background:rgba(14,21,36,.92);
+  border-bottom:1px solid var(--xun-line);
+}
+.xun-notice{
+  background:linear-gradient(90deg,#152238 0%,#1b2b45 55%,#152238 100%);
+  border-bottom:1px solid var(--xun-line);
+  font-size:13px;
+}
+.xun-notice-inner{
+  display:flex;align-items:center;gap:14px;padding:8px 0;
+  overflow:hidden;
+}
+.xun-notice-tag{
+  flex:none;background:var(--xun-accent);color:#06231f;
+  font-weight:800;font-size:11px;letter-spacing:.12em;
+  padding:2px 8px;border-radius:4px;
+}
+.xun-notice-track{position:relative;flex:1;min-width:0;height:22px;overflow:hidden}
+.xun-notice-item{
+  position:absolute;inset:0;display:flex;align-items:center;gap:8px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  color:#cfdcf1;opacity:0;transform:translateY(10px);
+  transition:opacity .5s,transform .5s;
+}
+.xun-notice-item.xun-on{opacity:1;transform:translateY(0)}
+.xun-notice-item b{color:var(--xun-accent);font-weight:700}
+.xun-notice-date{color:var(--xun-muted);font-size:12px}
+.xun-notice-close{
+  flex:none;color:var(--xun-muted);font-size:16px;line-height:1;padding:4px;
+  border-radius:6px;transition:.2s;
+}
+.xun-notice-close:hover{color:var(--xun-text);background:var(--xun-panel)}
+.xun-notice.xun-collapsed .xun-notice-inner{display:none}
+
+.xun-header{padding:12px 0}
+.xun-head-inner{display:flex;align-items:center;gap:22px}
+.xun-brand{display:flex;align-items:center;gap:10px;flex:none}
+.xun-brand-mark{
+  width:38px;height:38px;border-radius:11px;flex:none;
+  background:radial-gradient(circle at 30% 25%,#2a3f63,#141d2f);
+  border:1px solid var(--xun-line);
+  display:grid;place-items:center;
+}
+.xun-brand-mark svg{width:20px;height:20px}
+.xun-brand-text{font-size:17px;font-weight:800;letter-spacing:.02em;line-height:1.2}
+.xun-brand-text small{display:block;font-size:10px;color:var(--xun-muted);font-weight:500;letter-spacing:.2em}
+.xun-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+.xun-nav a{
+  font-size:14px;color:var(--xun-muted);padding:7px 11px;border-radius:8px;
+  transition:.2s;white-space:nowrap;
+}
+.xun-nav a:hover{color:var(--xun-text);background:var(--xun-panel)}
+.xun-head-tools{display:flex;align-items:center;gap:10px;margin-left:auto}
+.xun-search{position:relative;display:flex;align-items:center}
+.xun-search input{
+  width:190px;background:var(--xun-panel);border:1px solid var(--xun-line);
+  color:var(--xun-text);font-size:13px;padding:8px 34px 8px 12px;
+  border-radius:9px;outline:none;transition:.25s;
+}
+.xun-search input:focus{width:230px;border-color:var(--xun-accent)}
+.xun-search button{
+  position:absolute;right:6px;width:24px;height:24px;display:grid;place-items:center;
+  color:var(--xun-muted);border-radius:6px;
+}
+.xun-search button:hover{color:var(--xun-accent)}
+.xun-search-tip{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;
+  background:var(--xun-panel2);border:1px solid var(--xun-line);
+  border-radius:10px;padding:6px;font-size:13px;display:none;z-index:60;
+  box-shadow:0 18px 40px rgba(0,0,0,.45);
+}
+.xun-search-tip.xun-on{display:block}
+.xun-search-tip p{padding:7px 10px;border-radius:7px;color:var(--xun-muted);cursor:pointer;transition:.15s}
+.xun-search-tip p:hover{background:var(--xun-bg2);color:var(--xun-text)}
+.xun-btn{
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;
+  font-size:14px;font-weight:700;padding:10px 18px;border-radius:10px;
+  background:var(--xun-accent);color:#052420;transition:.22s;
+}
+.xun-btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(64,224,208,.28)}
+.xun-btn-ghost{
+  background:transparent;border:1px solid var(--xun-line);color:var(--xun-text);
+}
+.xun-btn-ghost:hover{border-color:var(--xun-accent);box-shadow:none;background:rgba(64,224,208,.06)}
+.xun-btn-small{padding:7px 13px;font-size:12.5px;border-radius:8px}
+.xun-nav-toggle{
+  display:none;margin-left:auto;width:40px;height:40px;border-radius:10px;
+  border:1px solid var(--xun-line);place-items:center;
+}
+.xun-mobile-nav{display:none;padding:10px 0 16px}
+.xun-mobile-nav a{display:block;padding:11px 12px;border-radius:9px;color:var(--xun-muted);font-size:15px}
+.xun-mobile-nav a:hover{background:var(--xun-panel);color:var(--xun-text)}
+.xun-mobile-nav .xun-search{margin-top:8px}
+.xun-mobile-nav .xun-search input{width:100%}
+
+/* ============ 首屏 ============ */
+.xun-hero{padding:56px 0 72px;position:relative;overflow:hidden}
+.xun-hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(560px 320px at 82% 8%,rgba(64,224,208,.10),transparent 70%),
+    radial-gradient(520px 360px at 6% 90%,rgba(124,140,255,.10),transparent 72%);
+}
+.xun-hero-grid{
+  position:relative;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+}
+.xun-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;
+  border:1px solid var(--xun-line);background:var(--xun-panel);
+  color:var(--xun-muted);padding:5px 12px;border-radius:999px;margin-bottom:20px;
+}
+.xun-hero-badge i{width:7px;height:7px;border-radius:50%;background:var(--xun-accent);box-shadow:0 0 10px var(--xun-accent)}
+h1.xun-h1{
+  font-size:clamp(34px,5.6vw,62px);line-height:1.12;font-weight:900;
+  letter-spacing:-.03em;word-break:break-word;
+}
+h1.xun-h1 em{
+  font-style:normal;
+  background:linear-gradient(92deg,var(--xun-accent),var(--xun-accent2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.xun-hero-lead{font-size:16px;color:#c3d0e6;margin-top:20px;max-width:560px}
+.xun-hero-intro{
+  margin-top:18px;font-size:14.5px;color:var(--xun-muted);
+  border-left:2px solid var(--xun-accent);padding-left:16px;max-width:580px;
+}
+.xun-hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.xun-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px;
+}
+.xun-stat{
+  background:linear-gradient(180deg,var(--xun-panel),rgba(24,35,56,.4));
+  border:1px solid var(--xun-line);border-radius:var(--xun-radius);
+  padding:14px 16px;
+}
+.xun-stat b{display:block;font-size:24px;font-weight:900;color:var(--xun-accent);letter-spacing:-.02em}
+.xun-stat span{font-size:12px;color:var(--xun-muted)}
+.xun-hero-visual{position:relative}
+.xun-hero-visual img{
+  width:100%;aspect-ratio:16/11;object-fit:cover;border-radius:20px;
+  border:1px solid var(--xun-line);
+}
+.xun-hero-float{
+  position:absolute;left:-14px;bottom:18px;
+  background:rgba(19,28,48,.94);border:1px solid var(--xun-line);
+  border-radius:14px;padding:12px 16px;backdrop-filter:blur(10px);
+  box-shadow:0 20px 44px rgba(0,0,0,.5);
+  max-width:250px;
+}
+.xun-hero-float b{font-size:13px;display:block;color:var(--xun-accent)}
+.xun-hero-float span{font-size:11.5px;color:var(--xun-muted);line-height:1.5;display:block;margin-top:3px}
+.xun-hero-play{
+  position:absolute;right:16px;top:16px;width:52px;height:52px;border-radius:50%;
+  background:rgba(64,224,208,.92);display:grid;place-items:center;
+  box-shadow:0 12px 30px rgba(64,224,208,.35);
+}
+.xun-hero-play svg{width:18px;height:18px;margin-left:2px;fill:#062a26}
+
+/* ============ 焦点内容 + 视频流 ============ */
+.xun-focus-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:start}
+.xun-focus-main{
+  border:1px solid var(--xun-line);border-radius:18px;overflow:hidden;
+  background:var(--xun-panel);transition:.28s;
+}
+.xun-focus-main:hover{transform:translateY(-3px);border-color:#3a4b6e;box-shadow:0 24px 52px rgba(0,0,0,.42)}
+.xun-focus-main .xun-cover{position:relative}
+.xun-focus-main img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.xun-play-badge{
+  position:absolute;left:14px;top:14px;font-size:11.5px;font-weight:800;
+  background:rgba(14,21,36,.8);backdrop-filter:blur(6px);
+  border:1px solid var(--xun-line);color:var(--xun-accent);
+  padding:4px 10px;border-radius:999px;letter-spacing:.06em;
+}
+.xun-focus-body{padding:20px 22px 24px}
+.xun-tag-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.xun-tag{
+  font-size:11.5px;color:var(--xun-accent);background:rgba(64,224,208,.1);
+  border:1px solid rgba(64,224,208,.28);padding:2px 9px;border-radius:999px;
+  white-space:nowrap;
+}
+.xun-tag.xun-tag-warm{color:var(--xun-warm);background:rgba(255,180,84,.1);border-color:rgba(255,180,84,.3)}
+.xun-focus-body h3{font-size:21px;line-height:1.4;font-weight:800}
+.xun-focus-body p{color:var(--xun-muted);font-size:14px;margin-top:10px}
+.xun-meta-line{
+  display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:16px;
+  font-size:12.5px;color:var(--xun-muted);
+}
+.xun-meta-line .xun-author-mini{display:flex;align-items:center;gap:7px;color:#cfdcf1}
+.xun-meta-line .xun-auth-dot{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800;color:#06231f}
+.xun-focus-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.xun-icon-btn{
+  display:inline-flex;align-items:center;gap:7px;font-size:13px;
+  border:1px solid var(--xun-line);padding:7px 13px;border-radius:9px;
+  color:var(--xun-muted);transition:.2s;
+}
+.xun-icon-btn:hover{border-color:var(--xun-accent);color:var(--xun-text)}
+.xun-icon-btn.xun-active{color:var(--xun-warm);border-color:rgba(255,180,84,.5);background:rgba(255,180,84,.08)}
+.xun-icon-btn svg{width:15px;height:15px;fill:currentColor}
+
+.xun-vid-list{display:flex;flex-direction:column;gap:10px}
+.xun-vid-item{
+  display:flex;gap:14px;align-items:flex-start;padding:14px;
+  border:1px solid transparent;border-radius:12px;transition:.22s;
+}
+.xun-vid-item:hover{background:var(--xun-panel);border-color:var(--xun-line);transform:translateX(3px)}
+.xun-vid-num{
+  flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;
+  font-size:12px;font-weight:800;background:var(--xun-panel2);color:var(--xun-accent);
+  border:1px solid var(--xun-line);margin-top:2px;
+}
+.xun-vid-main{min-width:0;flex:1}
+.xun-vid-main h4{font-size:15px;font-weight:700;line-height:1.45}
+.xun-vid-main p{font-size:13px;color:var(--xun-muted);margin-top:5px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.xun-vid-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:8px;font-size:11.5px;color:var(--xun-muted)}
+.xun-vid-foot .xun-vtag{color:var(--xun-accent2);border:1px solid rgba(124,140,255,.3);padding:1px 7px;border-radius:999px}
+.xun-dot-sep{width:3px;height:3px;border-radius:50%;background:var(--xun-muted);display:inline-block}
+
+/* ============ 关键词解析（深度长文） ============ */
+.xun-parse-wrap{
+  background:linear-gradient(180deg,var(--xun-bg2),rgba(19,28,48,.4));
+  border:1px solid var(--xun-line);border-radius:20px;padding:clamp(24px,4vw,44px);
+}
+.xun-parse-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 40px;margin-top:26px}
+.xun-parse-block h3{
+  font-size:18px;font-weight:800;color:#eaf2ff;margin-bottom:10px;
+  display:flex;gap:10px;align-items:baseline;
+}
+.xun-parse-block h3 span{font-size:12px;color:var(--xun-accent);font-weight:900;letter-spacing:.1em;flex:none}
+.xun-parse-block p{font-size:14px;color:#adbbd3;line-height:1.9}
+.xun-parse-block p+p{margin-top:10px}
+
+/* ============ 专题 ============ */
+.xun-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.xun-topic-card{
+  border:1px solid var(--xun-line);border-radius:16px;padding:22px;
+  background:linear-gradient(180deg,var(--xun-panel),rgba(24,35,56,.36));
+  display:flex;flex-direction:column;gap:12px;transition:.26s;
+}
+.xun-topic-card:hover{transform:translateY(-4px);border-color:#3a4b6e}
+.xun-topic-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.xun-topic-head h3{font-size:17px;font-weight:800;line-height:1.4}
+.xun-topic-status{
+  flex:none;font-size:11px;padding:2px 9px;border-radius:999px;
+  background:rgba(64,224,208,.12);color:var(--xun-accent);border:1px solid rgba(64,224,208,.28);
+  white-space:nowrap;
+}
+.xun-topic-status.xun-status-warm{background:rgba(255,180,84,.1);color:var(--xun-warm);border-color:rgba(255,180,84,.3)}
+.xun-topic-card>p{font-size:13px;color:var(--xun-muted)}
+.xun-topic-items{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:2px}
+.xun-topic-items li{
+  font-size:13px;color:#c3d0e6;padding-left:15px;position:relative;line-height:1.6;
+}
+.xun-topic-items li::before{
+  content:"";position:absolute;left:0;top:8px;width:5px;height:5px;
+  border-radius:2px;background:var(--xun-accent);transform:rotate(45deg);
+}
+.xun-topic-card img{width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:11px;margin-top:4px}
+
+/* ============ 创作者（双列简介） ============ */
+.xun-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.xun-author-card{
+  display:flex;gap:16px;align-items:flex-start;padding:20px;
+  border:1px solid var(--xun-line);border-radius:16px;background:var(--xun-panel);
+  transition:.24s;position:relative;
+}
+.xun-author-card:hover{border-color:#3a4b6e;transform:translateY(-3px)}
+.xun-avatar{
+  flex:none;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;
+  font-size:20px;font-weight:900;color:#06231f;letter-spacing:0;
+}
+.xun-author-info{min-width:0;flex:1}
+.xun-author-info h3{font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.xun-author-info h3 small{font-size:11px;color:var(--xun-muted);font-weight:500;border:1px solid var(--xun-line);padding:1px 7px;border-radius:999px}
+.xun-author-info>p{font-size:13px;color:var(--xun-muted);margin-top:7px;line-height:1.7}
+.xun-author-foot{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:11.5px;color:var(--xun-muted)}
+.xun-author-foot b{color:var(--xun-accent);font-weight:800}
+.xun-author-open{
+  position:absolute;right:12px;top:12px;font-size:11.5px;color:var(--xun-accent2);
+  padding:3px 8px;border-radius:7px;border:1px solid rgba(124,140,255,.3);
+  transition:.2s;
+}
+.xun-author-open:hover{background:rgba(124,140,255,.12)}
+
+/* ============ 评论 / 口碑（双列短评 + 评分摘要） ============ */
+.xun-review-summary{
+  display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;
+  border:1px solid var(--xun-line);border-radius:16px;padding:22px 24px;
+  background:var(--xun-panel);margin-bottom:22px;
+}
+.xun-score{display:flex;align-items:baseline;gap:8px;flex:none}
+.xun-score b{font-size:46px;font-weight:900;color:var(--xun-accent);line-height:1;letter-spacing:-.03em}
+.xun-score span{font-size:13px;color:var(--xun-muted)}
+.xun-score-bars{display:flex;flex-direction:column;gap:6px;min-width:0}
+.xun-score-row{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--xun-muted)}
+.xun-score-row .xun-bar{flex:1;height:6px;border-radius:999px;background:var(--xun-bg2);overflow:hidden;min-width:60px}
+.xun-score-row .xun-bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--xun-accent),var(--xun-accent2))}
+.xun-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.xun-review{
+  border:1px solid var(--xun-line);border-radius:14px;padding:18px;
+  background:rgba(24,35,56,.5);transition:.22s;
+}
+.xun-review:hover{border-color:#3a4b6e;background:var(--xun-panel2)}
+.xun-review-top{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.xun-review-top .xun-rv-dot{
+  width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  font-size:12px;font-weight:800;color:#06231f;flex:none;
+}
+.xun-review-top strong{font-size:13.5px;font-weight:700}
+.xun-review-top em{font-style:normal;font-size:11px;color:var(--xun-warm);margin-left:auto;white-space:nowrap}
+.xun-review p{font-size:13.5px;color:#bcc9df;line-height:1.8}
+.xun-review .xun-rv-tag{font-size:11px;color:var(--xun-muted);margin-top:10px;display:block}
+
+/* ============ 企业动态 / 时间线 ============ */
+.xun-news-list{display:flex;flex-direction:column;border-top:1px solid var(--xun-line)}
+.xun-news-item{
+  display:grid;grid-template-columns:96px 1fr auto;gap:18px;align-items:center;
+  padding:16px 4px;border-bottom:1px solid var(--xun-line);transition:.2s;
+}
+.xun-news-item:hover{background:rgba(24,35,56,.45)}
+.xun-news-date{font-size:12.5px;color:var(--xun-accent);font-weight:700;letter-spacing:.02em}
+.xun-news-item h3{font-size:14.5px;font-weight:700;line-height:1.5}
+.xun-news-item p{font-size:12.5px;color:var(--xun-muted);margin-top:2px}
+.xun-news-cat{
+  font-size:11px;color:var(--xun-muted);border:1px solid var(--xun-line);
+  padding:2px 9px;border-radius:999px;white-space:nowrap;
+}
+
+/* ============ 合作墙 ============ */
+.xun-partner-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.xun-partner{
+  border:1px solid var(--xun-line);border-radius:12px;padding:18px 12px;
+  text-align:center;font-size:14px;font-weight:800;color:#cfdcf1;
+  background:var(--xun-panel);letter-spacing:.02em;transition:.22s;
+}
+.xun-partner:hover{border-color:var(--xun-accent);color:var(--xun-accent);transform:translateY(-2px)}
+.xun-partner small{display:block;font-size:11px;font-weight:500;color:var(--xun-muted);margin-top:4px;letter-spacing:0}
+
+/* ============ FAQ ============ */
+.xun-faq{display:flex;flex-direction:column;gap:10px;max-width:900px}
+.xun-faq details{
+  border:1px solid var(--xun-line);border-radius:12px;background:var(--xun-panel);
+  padding:0 18px;transition:.2s;
+}
+.xun-faq details[open]{border-color:rgba(64,224,208,.4);background:var(--xun-panel2)}
+.xun-faq summary{
+  list-style:none;cursor:pointer;padding:15px 0;font-size:14.5px;font-weight:700;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+}
+.xun-faq summary::-webkit-details-marker{display:none}
+.xun-faq summary::after{
+  content:"+";font-size:20px;color:var(--xun-accent);font-weight:400;flex:none;transition:.2s;
+}
+.xun-faq details[open] summary::after{transform:rotate(45deg)}
+.xun-faq details p{font-size:13.5px;color:var(--xun-muted);padding:0 0 16px;line-height:1.85;max-width:92%}
+
+/* ============ 投稿 CTA ============ */
+.xun-cta-band{
+  border:1px solid rgba(64,224,208,.32);border-radius:20px;
+  background:
+    radial-gradient(420px 200px at 88% 12%,rgba(64,224,208,.16),transparent 70%),
+    linear-gradient(120deg,#152238,#1b2b45);
+  padding:clamp(26px,4vw,44px);
+  display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;
+}
+.xun-cta-band h2{font-size:clamp(22px,3vw,30px);font-weight:900;letter-spacing:-.02em}
+.xun-cta-band p{color:var(--xun-muted);font-size:14px;margin-top:8px;max-width:560px}
+
+/* ============ 页脚 ============ */
+.xun-footer{background:#0a1120;border-top:1px solid var(--xun-line);padding:52px 0 30px}
+.xun-foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px}
+.xun-foot-brand p{font-size:13px;color:var(--xun-muted);margin-top:14px;max-width:320px;line-height:1.85}
+.xun-foot-col h4{font-size:13px;font-weight:800;letter-spacing:.08em;color:#cfdcf1;margin-bottom:14px}
+.xun-foot-col a,.xun-foot-col span{display:block;font-size:13px;color:var(--xun-muted);padding:5px 0;transition:.18s}
+.xun-foot-col a:hover{color:var(--xun-accent)}
+.xun-foot-bottom{
+  margin-top:36px;padding-top:22px;border-top:1px solid var(--xun-line);
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-size:12px;color:var(--xun-muted);
+}
+
+/* ============ 弹窗 / Toast ============ */
+.xun-modal-mask{
+  position:fixed;inset:0;background:rgba(6,10,18,.72);backdrop-filter:blur(6px);
+  z-index:200;display:none;align-items:center;justify-content:center;padding:20px;
+}
+.xun-modal-mask.xun-on{display:flex}
+.xun-modal{
+  width:min(520px,100%);background:var(--xun-panel);border:1px solid var(--xun-line);
+  border-radius:18px;padding:26px;max-height:86vh;overflow:auto;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);animation:xunPop .25s ease;
+}
+@keyframes xunPop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.xun-modal h3{font-size:19px;font-weight:800;margin-bottom:6px}
+.xun-modal .xun-modal-sub{font-size:13px;color:var(--xun-muted);margin-bottom:18px}
+.xun-modal label{font-size:12.5px;color:var(--xun-muted);display:block;margin:12px 0 6px}
+.xun-modal input,.xun-modal textarea,.xun-modal select{
+  width:100%;background:var(--xun-bg2);border:1px solid var(--xun-line);
+  color:var(--xun-text);font-size:14px;padding:10px 12px;border-radius:10px;
+  outline:none;font-family:inherit;transition:.2s;
+}
+.xun-modal input:focus,.xun-modal textarea:focus,.xun-modal select:focus{border-color:var(--xun-accent)}
+.xun-modal textarea{min-height:96px;resize:vertical}
+.xun-modal-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.xun-modal-close{
+  position:absolute;right:18px;top:16px;font-size:20px;color:var(--xun-muted);
+  width:32px;height:32px;border-radius:9px;display:grid;place-items:center;
+}
+.xun-modal-close:hover{background:var(--xun-bg2);color:var(--xun-text)}
+.xun-modal{position:relative}
+.xun-share-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+.xun-share-row button{
+  border:1px solid var(--xun-line);border-radius:11px;padding:14px 8px;font-size:13px;
+  color:var(--xun-muted);transition:.2s;background:var(--xun-bg2);
+}
+.xun-share-row button:hover{border-color:var(--xun-accent);color:var(--xun-accent)}
+.xun-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:var(--xun-accent);color:#052420;font-size:13.5px;font-weight:800;
+  padding:11px 20px;border-radius:999px;z-index:300;opacity:0;pointer-events:none;
+  transition:.28s;box-shadow:0 16px 40px rgba(64,224,208,.32);white-space:nowrap;
+}
+.xun-toast.xun-on{opacity:1;transform:translate(-50%,0)}
+.xun-top-btn{
+  position:fixed;right:20px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  background:var(--xun-panel2);border:1px solid var(--xun-line);color:var(--xun-accent);
+  display:grid;place-items:center;z-index:150;opacity:0;pointer-events:none;
+  transition:.25s;box-shadow:0 14px 34px rgba(0,0,0,.45);
+}
+.xun-top-btn.xun-on{opacity:1;pointer-events:auto}
+.xun-top-btn:hover{border-color:var(--xun-accent);transform:translateY(-2px)}
+
+/* anchors 偏移 */
+#xun-home,#xun-focus,#xun-analysis,#xun-topics,#xun-authors,#xun-reviews,#xun-news,#xun-faq{
+  scroll-margin-top:var(--xun-sticky);
+}
+
+@media (max-width:1024px){
+  .xun-hero-grid{grid-template-columns:1fr;gap:34px}
+  .xun-focus-layout{grid-template-columns:1fr}
+  .xun-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .xun-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .xun-foot-grid{grid-template-columns:1fr 1fr}
+  .xun-parse-grid{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .xun-nav{display:none}
+  .xun-head-tools{display:none}
+  .xun-nav-toggle{display:grid}
+  .xun-mobile-nav.xun-on{display:block}
+  .xun-author-grid{grid-template-columns:1fr}
+  .xun-review-grid{grid-template-columns:1fr}
+  .xun-review-summary{grid-template-columns:1fr;gap:16px}
+}
+@media (max-width:640px){
+  .xun-wrap{width:calc(100% - 28px)}
+  .xun-section{padding:44px 0}
+  .xun-hero{padding:36px 0 52px}
+  .xun-stats{grid-template-columns:1fr;gap:10px}
+  .xun-topic-grid{grid-template-columns:1fr}
+  .xun-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .xun-news-item{grid-template-columns:1fr auto;gap:6px}
+  .xun-news-date{grid-column:1/-1}
+  .xun-foot-grid{grid-template-columns:1fr}
+  .xun-notice-tag{display:none}
+  .xun-cta-band{flex-direction:column;align-items:flex-start}
+  .xun-hero-float{left:8px;bottom:10px;max-width:220px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ============ 吸顶容器：公告条 + 页头 ============ -->
+<div class="xun-sticky-shell" id="xun-sticky">
+  <div class="xun-notice" id="xun-notice">
+    <div class="xun-wrap xun-notice-inner">
+      <span class="xun-notice-tag">官方发布</span>
+      <div class="xun-notice-track" id="xun-notice-track">
+        <div class="xun-notice-item xun-on"><b>新增</b>「城市取景器 · 第二季」4K 高清正片 12 集已上线，支持离线下载</div>
+        <div class="xun-notice-item"><b>报名</b>2026 冬季创作者扶持计划开放投稿，首批名额 200 位</div>
+        <div class="xun-notice-item"><b>上线</b>创作者后台新增「脚本灵感库」与剪辑思路模板，已对全站开放</div>
+        <div class="xun-notice-item"><b>更新</b>评论区支持按标签筛选，口碑评分维度细化为 5 项</div>
+      </div>
+      <button class="xun-notice-close" id="xun-notice-close" aria-label="收起公告">✕</button>
+    </div>
+  </div>
+
+  <header class="xun-header">
+    <div class="xun-wrap xun-head-inner">
+      <a class="xun-brand" href="#xun-home" aria-label="返回首页">
+        <span class="xun-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#40e0d0" stroke-width="2.2"/><path d="M10 8.6l5.4 3.4L10 15.4z" fill="#40e0d0"/></svg>
+        </span>
+        <span class="xun-brand-text">讯聚吧<small>XUNJUBA VIDEO</small></span>
+      </a>
+
+      <nav class="xun-nav" aria-label="主导航">
+        <a href="#xun-focus">焦点内容</a>
+        <a href="#xun-analysis">品牌解析</a>
+        <a href="#xun-topics">专题企划</a>
+        <a href="#xun-authors">创作者</a>
+        <a href="#xun-reviews">用户口碑</a>
+        <a href="#xun-news">企业动态</a>
+        <a href="#xun-faq">帮助中心</a>
+      </nav>
+
+      <div class="xun-head-tools">
+        <div class="xun-search" id="xun-search-desktop">
+          <input type="search" id="xun-search-input" placeholder="搜索视频、创作者、专题" aria-label="站内搜索">
+          <button type="button" id="xun-search-btn" aria-label="搜索">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+          </button>
+          <div class="xun-search-tip" id="xun-search-tip"></div>
+        </div>
+        <button class="xun-btn xun-btn-small" id="xun-open-submit-top">投稿入口</button>
+      </div>
+
+      <button class="xun-nav-toggle" id="xun-nav-toggle" aria-label="展开菜单" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+
+    <div class="xun-mobile-nav" id="xun-mobile-nav">
+      <div class="xun-wrap">
+        <a href="#xun-focus">焦点内容</a>
+        <a href="#xun-analysis">品牌解析</a>
+        <a href="#xun-topics">专题企划</a>
+        <a href="#xun-authors">创作者</a>
+        <a href="#xun-reviews">用户口碑</a>
+        <a href="#xun-news">企业动态</a>
+        <a href="#xun-faq">帮助中心</a>
+        <div class="xun-search" id="xun-search-mobile">
+          <input type="search" placeholder="搜索视频、创作者、专题" aria-label="移动端站内搜索">
+          <button type="button" aria-label="搜索">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+<!-- ============ 首屏 ============ -->
+<section class="xun-hero" id="xun-home">
+  <div class="xun-wrap xun-hero-grid">
+    <div>
+      <span class="xun-hero-badge"><i></i>讯聚吧官方网站 · 品牌门户</span>
+      <h1 class="xun-h1">www.xunjuba.com<em> 原创高清视频社区</em></h1>
+      <p class="xun-hero-lead">以创作为核心的企业级视频平台：聚合优质创作者、精品内容与真实口碑，让每一次播放都值得信赖。</p>
+      <p class="xun-hero-intro">讯聚吧是深耕视频内容生态的原创平台，以官方网站为品牌阵地，为创作者与企业提供高清内容发布、专题企划、社区互动与数据反馈的一站式服务，坚持正版、专业与匠心，陪伴每一位创作者持续成长。</p>
+      <div class="xun-hero-cta">
+        <a class="xun-btn" href="#xun-focus">浏览焦点内容</a>
+        <a class="xun-btn xun-btn-ghost" href="#xun-authors">认识创作者</a>
+        <button class="xun-btn xun-btn-ghost" id="xun-open-submit-hero">我要投稿</button>
+      </div>
+      <div class="xun-stats">
+        <div class="xun-stat"><b data-xun-count="18600">0</b><span>原创高清视频（条）</span></div>
+        <div class="xun-stat"><b data-xun-count="1240">0</b><span>签约与合作创作者（位）</span></div>
+        <div class="xun-stat"><b data-xun-count="96">0</b><span>用户口碑好评率（%）</span></div>
+      </div>
+    </div>
+    <div class="xun-hero-visual">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 550'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23101a2c'/%3E%3Cstop offset='1' stop-color='%231d2c47'/%3E%3C/linearGradient%3E%3ClinearGradient id='gl' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2340e0d0'/%3E%3Cstop offset='1' stop-color='%237c8cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='550' fill='url(%23bg)'/%3E%3Ccircle cx='640' cy='110' r='120' fill='%2340e0d0' opacity='.10'/%3E%3Ccircle cx='120' cy='470' r='150' fill='%237c8cff' opacity='.10'/%3E%3Cg stroke='%232a3854' stroke-width='1'%3E%3Cpath d='M0 150h800M0 300h800M0 450h800M200 0v550M400 0v550M600 0v550' opacity='.4'/%3E%3C/g%3E%3Crect x='150' y='180' width='500' height='290' rx='22' fill='%23172236' stroke='%23354768' stroke-width='2'/%3E%3Crect x='180' y='210' width='440' height='190' rx='12' fill='%230e1524'/%3E%3Cpath d='M370 275l70 40-70 40z' fill='url(%23gl)'/%3E%3Crect x='180' y='420' width='250' height='12' rx='6' fill='%232a3854'/%3E%3Crect x='180' y='442' width='150' height='10' rx='5' fill='%23223049'/%3E%3Ccircle cx='600' cy='426' r='16' fill='%2340e0d0' opacity='.85'/%3E%3Crect x='60' y='70' width='170' height='60' rx='12' fill='%23172236' stroke='%23354768'/%3E%3Crect x='80' y='88' width='80' height='9' rx='4' fill='%2340e0d0' opacity='.8'/%3E%3Crect x='80' y='105' width='120' height='7' rx='3' fill='%238394ad'/%3E%3Cg fill='%2340e0d0' opacity='.5'%3E%3Ccircle cx='700' cy='300' r='4'/%3E%3Ccircle cx='730' cy='340' r='3'/%3E%3Ccircle cx='680' cy='380' r='2.5'/%3E%3C/g%3E%3C/svg%3E" alt="讯聚吧官方网站品牌主视觉：深色界面中的播放器与数据面板，呈现原创高清视频平台形象" width="800" height="550">
+      <span class="xun-hero-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+      <div class="xun-hero-float">
+        <b>本周焦点 · 城市取景器</b>
+        <span>4K 高清正片 12 集，摄影师与城市观察者的联合企划</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 焦点内容 + 视频流 ============ -->
+<section class="xun-section" id="xun-focus">
+  <div class="xun-wrap">
+    <div class="xun-sec-head">
+      <div>
+        <span class="xun-eyebrow">Focus · 焦点推荐</span>
+        <h2 class="xun-h2">焦点内容：本周值得完整看完的原创视频</h2>
+        <p class="xun-sub">由编辑团队与创作者共同推荐的精品内容，覆盖人物访谈、幕后记录与实用教程，全部为高清正版发布。</p>
+      </div>
+      <a class="xun-btn xun-btn-ghost xun-btn-small" href="#xun-topics">查看全部专题</a>
+    </div>
+
+    <div class="xun-focus-layout">
+      <article class="xun-focus-main">
+        <div class="xun-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23243350'/%3E%3Cstop offset='1' stop-color='%2350698f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23sky)'/%3E%3Crect y='250' width='800' height='200' fill='%23152034'/%3E%3Cg fill='%23253647'%3E%3Crect x='40' y='180' width='70' height='200'/%3E%3Crect x='130' y='140' width='90' height='240'/%3E%3Crect x='245' y='200' width='60' height='180'/%3E%3Crect x='330' y='120' width='110' height='260'/%3E%3Crect x='465' y='175' width='80' height='205'/%3E%3Crect x='570' y='150' width='95' height='230'/%3E%3Crect x='690' y='195' width='70' height='185'/%3E%3C/g%3E%3Cg fill='%23ffd98a' opacity='.85'%3E%3Crect x='150' y='165' width='10' height='12'/%3E%3Crect x='172' y='165' width='10' height='12'/%3E%3Crect x='356' y='150' width='11' height='13'/%3E%3Crect x='380' y='150' width='11' height='13'/%3E%3Crect x='404' y='150' width='11' height='13'/%3E%3Crect x='596' y='178' width='10' height='12'/%3E%3Crect x='620' y='178' width='10' height='12'/%3E%3C/g%3E%3Ccircle cx='655' cy='80' r='42' fill='%23f2e2a8' opacity='.85'/%3E%3Cpath d='M0 380q200 -40 400 0t400 -10v80H0z' fill='%230d1526' opacity='.9'/%3E%3Cg stroke='%2340e0d0' stroke-width='3' opacity='.7' fill='none'%3E%3Cpath d='M120 300h60l20 -40 20 80 20 -40h60'/%3E%3C/g%3E%3C/svg%3E" alt="城市取景器专题封面：黄昏城市天际线与界面波形，表现城市探索纪录影像" width="800" height="450">
+          <span class="xun-play-badge">▶ 重点推荐 · 4K</span>
+        </div>
+        <div class="xun-focus-body">
+          <div class="xun-tag-row">
+            <span class="xun-tag">城市探索</span>
+            <span class="xun-tag">在地文化</span>
+            <span class="xun-tag xun-tag-warm">官方企划</span>
+          </div>
+          <h3>城市取景器 第二季 第 1 集：在老城区的六点半，等一场光</h3>
+          <p>摄制组用 14 天记录一条老街从清晨到入夜的光线变化，采访 9 位在地居民与 3 位创作者，呈现城市影像创作的真实过程与取舍。</p>
+          <div class="xun-meta-line">
+            <span class="xun-author-mini"><span class="xun-auth-dot" style="background:#40e0d0">林</span>林见野</span>
+            <span>播放 48.6 万</span>
+            <span>点赞 3.2 万</span>
+            <span>收藏 1.4 万</span>
+            <span>时长 26:40</span>
+          </div>
+          <div class="xun-focus-actions">
+            <button class="xun-icon-btn" data-xun-like="focus1" data-xun-base="32180">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.3-9A5.4 5.4 0 0 1 12 6.6 5.4 5.4 0 0 1 21.3 12c-1.8 4.3-9.3 9-9.3 9z"/></svg>
+              <span class="xun-like-num">3.2 万</span>
+            </button>
+            <button class="xun-icon-btn" data-xun-fav="focus1">
+              <svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>
+              收藏
+            </button>
+            <button class="xun-icon-btn" data-xun-share="城市取景器 第二季 第 1 集：在老城区的六点半，等一场光">分享</button>
+            <button class="xun-icon-btn" data-xun-report="城市取景器 第二季 第 1 集">反馈</button>
+          </div>
+        </div>
+      </article>
+
+      <div class="xun-vid-list">
+        <article class="xun-vid-item">
+          <span class="xun-vid-num">01</span>
+          <div class="xun-vid-main">
+            <h4>创作者访谈：一个人完成一支片，需要多少次推翻重来</h4>
+            <p>从分镜到调色，独立创作者周与舟公开自己的 37 版剪辑工程，谈创作中的取舍与方法论。</p>
+            <div class="xun-vid-foot"><span class="xun-vtag">人物访谈</span><span>周与舟</span><span class="xun-dot-sep"></span><span>播放 21.3 万</span><span class="xun-dot-sep"></span><span>19:08</span></div>
+          </div>
+        </article>
+        <article class="xun-vid-item">
+          <span class="xun-vid-num">02</span>
+          <div class="xun-vid-main">
+            <h4>一支视频从立项到上线，平台审核与高清交付全流程</h4>
+            <p>拆解官方网站的投稿链路：素材规范、版权确认、画质校验与发布节奏，给出可复用的清单。</p>
+            <div class="xun-vid-foot"><span class="xun-vtag">实用技巧</span><span>讯聚吧编辑部</span><span class="xun-dot-sep"></span><span>播放 16.8 万</span><span class="xun-dot-sep"></span><span>12:22</span></div>
+          </div>
+        </article>
+        <article class="xun-vid-item">
+          <span class="xun-vid-num">03</span>
+          <div class="xun-vid-main">
+            <h4>小巷早餐地图：本地人愿意排队的三家铺子</h4>
+            <p>跟随本地向导走完三条巷子，记录早餐铺的日常节奏与手艺人的坚守。</p>
+            <div class="xun-vid-foot"><span class="xun-vtag">日常记录</span><span>阿禾</span><span class="xun-dot-sep"></span><span>播放 12.4 万</span><span class="xun-dot-sep"></span><span>14:35</span></div>
+          </div>
+        </article>
+        <article class="xun-vid-item">
+          <span class="xun-vid-num">04</span>
+          <div class="xun-vid-main">
+            <h4>剪辑教程：如何用三段素材完成一次情绪转折</h4>
+            <p>以真实成片为案例，讲清节奏、声音与留白的配合关系，新手也能直接套用的结构模板。</p>
+            <div class="xun-vid-foot"><span class="xun-vtag">教程干货</span><span>剪影实验室</span><span class="xun-dot-sep"></span><span>播放 9.7 万</span><span class="xun-dot-sep"></span><span>08:50</span></div>
+          </div>
+        </article>
+        <article class="xun-vid-item">
+          <span class="xun-vid-num">05</span>
+          <div class="xun-vid-main">
+            <h4>深度测评：四款入门麦克风，谁更适合口播视频</h4>
+            <p>同一空间同一脚本的对照测试，附实测噪音曲线与选购建议，避免为参数买单。</p>
+            <div class="xun-vid-foot"><span class="xun-vtag">深度测评</span><span>器材笔记</span><span class="xun-dot-sep"></span><span>播放 8.2 万</span><span class="xun-dot-sep"></span><span>11:16</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 关键词解析（长文） ============ -->
+<section class="xun-section" id="xun-analysis">
+  <div class="xun-wrap">
+    <div class="xun-parse-wrap">
+      <span class="xun-eyebrow">Analysis · 关键词解析</span>
+      <h2 class="xun-h2">关于 www.xunjuba.com：一个视频品牌官网的内容逻辑</h2>
+      <p class="xun-sub">理解这个品牌，需要从内容结构、创作者关系与官网运营三个层面看。以下解析约 900 字，帮助新用户与企业合作方快速建立认知。</p>
+
+      <div class="xun-parse-grid">
+        <div class="xun-parse-block">
+          <h3><span>01</span>品牌定位与内容结构</h3>
+          <p>www.xunjuba.com 并不是一个单纯的视频集合页，而是一套经过设计的品牌内容结构。作为官方网站，它的第一层是「焦点」——每周由编辑团队与创作者共同筛选出值得完整看完的精品内容，包含人物访谈、幕后记录、深度测评与实用教程；第二层是「专题企划」，把一个主题拆成若干集，用持续更新的方式讲述完整故事；第三层是「社区」，创作者在作者页沉淀作品，用户通过点赞、收藏、评论与投稿参与内容生态。</p>
+          <p>这种三层结构的价值在于：用户不必面对一个杂乱的信息流，而是沿着清晰的路径进入内容；合作方也能快速判断品牌的内容方向与品质标准。对一家视频企业而言，稳定的结构比一次爆款更重要，它决定了内容生态能否持续运营。</p>
+          <p>在页面组织上，讯聚吧把视频条目与文字摘要结合使用：重点内容配一组原创主视觉，其余条目采用标题、标签、作者与数据组成的文字列表。这样既保证了首屏与专题的视觉冲击，也避免了连续图片阵列带来的信息稀释，让内容密度和阅读节奏保持平衡。</p>
+        </div>
+
+        <div class="xun-parse-block">
+          <h3><span>02</span>创作者关系与内容生态</h3>
+          <p>讯聚吧把创作者视为平台的核心资产，而非流量来源。官方网站为每位创作者提供独立的作者档案，包括擅长领域、作品数、粉丝量与一段完整简介，用户可以据此判断内容风格与专业程度。同时，平台通过签约合作、专题邀约与创作扶持计划，让创作者获得稳定的发布节奏与合理的回报预期。</p>
+          <p>内容生态的健康依赖「正版」与「原创」两条底线。所有发布内容需完成版权确认，平台提供高清交付规范与素材校验流程，避免二次搬运与画质压缩造成的体验损失。创作者在上传时即可看到画质、音轨与字幕的检查结果，减少返工；审核通过后，内容会进入焦点、专题或社区等不同栏目，被更多真实用户看到。</p>
+          <p>更重要的是反馈机制。播放、完播、点赞、收藏与评论等数据会被整理成可读的报告，帮助创作者判断哪一段内容真正有效。平台不鼓励用夸张标题换取短期流量，而是把口碑作为长期指标，这也是「用户首选」「值得信赖」这类评价能够持续积累的原因。</p>
+        </div>
+
+        <div class="xun-parse-block">
+          <h3><span>03</span>官网运营、社会责任与企业动态</h3>
+          <p>官方网站的运营是一套长期动作：固定的更新时间、透明的审核规则、清晰的联系与投稿入口，以及及时发布的官方公告与企业动态。讯聚吧把公告条放在页面最顶部，用于发布新增内容、开放报名与功能更新等具体信息，让用户第一时间知道平台发生了什么，而不是用空泛的欢迎语占据位置。</p>
+          <p>在社区治理上，平台设置了反馈与举报入口，用户可以对内容质量、版权问题或不当信息发起反馈，编辑团队会在工作日内响应。对于垂直领域的内容，平台还会邀请行业从业者参与评审，确保知识类视频的专业性。这种机制让社区保持活力，也让品牌口碑建立在可验证的事实之上。</p>
+          <p>社会责任方面，讯聚吧持续开放公益影像与城市记录类企划的投稿通道，为独立创作者提供设备与场地支持，并把部分精品内容用于公共文化传播。企业动态栏目会同步记录这些项目的进展，接受用户监督。正是这些看似缓慢的积累，让一个视频品牌从「有内容」走向「有影响力」。</p>
+        </div>
+
+        <div class="xun-parse-block">
+          <h3><span>04</span>给新用户与合作方的实用建议</h3>
+          <p>如果你是第一次来到讯聚吧，建议从焦点内容开始，选择一支与兴趣相关的完整视频看完，再进入专题企划了解系列脉络；如果你关注创作者，可以在作者页查看其作品数与简介，再决定是否收藏关注。搜索框支持视频标题、标签与创作者名称检索，输入关键词即可获得即时提示。</p>
+          <p>如果你是企业合作方，建议先阅读品牌解析与企业动态，了解内容方向与更新频率，再通过投稿入口提交合作意向。平台更看重内容的真实性与专业度，而非单纯的曝光量级；一支讲清楚产品使用场景的短片，往往比堆砌镜头的宣传片更有效。</p>
+          <p>如果你是创作者，请务必在投稿前完成素材版权确认与画质检查，按官方规范交付高清文件。平台会为通过审核的内容安排合适的栏目位置，并在数据报告中给出改进建议。持续发布、认真回应评论、参与专题企划，是获得稳定成长的三条路径。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 专题企划 ============ -->
+<section class="xun-section" id="xun-topics">
+  <div class="xun-wrap">
+    <div class="xun-sec-head">
+      <div>
+        <span class="xun-eyebrow">Series · 专题企划</span>
+        <h2 class="xun-h2">专题企划：把一件事讲完整</h2>
+        <p class="xun-sub">每个专题由 3 集以上内容组成，持续更新，围绕城市、创作与生活展开。</p>
+      </div>
+    </div>
+
+    <div class="xun-topic-grid">
+      <article class="xun-topic-card">
+        <div class="xun-topic-head">
+          <h3>城市取景器</h3>
+          <span class="xun-topic-status">更新中 · 12 集</span>
+        </div>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 320'%3E%3Crect width='640' height='320' fill='%23182640'/%3E%3Ccircle cx='520' cy='80' r='56' fill='%23ffb454' opacity='.55'/%3E%3Cpath d='M0 250l90-70 80 55 100-95 90 70 110-60 170 95v75H0z' fill='%230e1a2c'/%3E%3Cpath d='M0 268l110-48 92 40 104-62 96 50 118-38 120 46v64H0z' fill='%231c2c47'/%3E%3Cg stroke='%2340e0d0' stroke-width='2' opacity='.6' fill='none'%3E%3Cpath d='M70 120h50v60H70zM250 90h60v90h-60zM420 110h44v70h-44z'/%3E%3C/g%3E%3C/svg%3E" alt="城市取景器专题配图：黄昏山城轮廓与暖色天光，城市探索纪录企划" width="640" height="320">
+        <p>摄影师与城市观察者的联合企划，记录一条街、一座桥、一个街区在不同时间里的样子。</p>
+        <ul class="xun-topic-items">
+          <li>第 1 集：在老城区的六点半，等一场光</li>
+          <li>第 2 集：桥上的人与桥下的船</li>
+          <li>第 3 集：菜市场里的一天，从四点开始</li>
+        </ul>
+      </article>
+
+      <article class="xun-topic-card">
+        <div class="xun-topic-head">
+          <h3>幕后的一百小时</h3>
+          <span class="xun-topic-status xun-status-warm">已完结 · 8 集</span>
+        </div>
+        <p>跟拍三支创作团队，从立项会议到成片交付，完整呈现内容生产中的分歧、妥协与坚持。</p>
+        <ul class="xun-topic-items">
+          <li>第 1 集：开机前，他们吵了三个小时</li>
+          <li>第 4 集：一条被删掉的镜头，救了整支片</li>
+          <li>第 8 集：交付那天，没有人说满意</li>
+        </ul>
+      </article>
+
+      <article class="xun-topic-card">
+        <div class="xun-topic-head">
+          <h3>新手创作者手册</h3>
+          <span class="xun-topic-status">更新中 · 16 集</span>
+        </div>
+        <p>从选题、拍摄到剪辑与发布，用可执行的步骤帮助新创作者完成第一支正式作品。</p>
+        <ul class="xun-topic-items">
+          <li>选题：先回答「谁需要看这支片」</li>
+          <li>拍摄：三个机位之外，光线更重要</li>
+          <li>发布：标题、封面与更新节奏的取舍</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 创作者矩阵 ============ -->
+<section class="xun-section" id="xun-authors">
+  <div class="xun-wrap">
+    <div class="xun-sec-head">
+      <div>
+        <span class="xun-eyebrow">Creators · 创作者矩阵</span>
+        <h2 class="xun-h2">这些创作者，构成了讯聚吧的内容生态</h2>
+        <p class="xun-sub">平台签约与合作创作者超过 1200 位，以下为本周重点推荐，点击可查看作者档案。</p>
+      </div>
+      <a class="xun-btn xun-btn-ghost xun-btn-small" href="#xun-faq">成为创作者</a>
+    </div>
+
+    <div class="xun-author-grid">
+      <article class="xun-author-card">
+        <span class="xun-avatar" style="background:linear-gradient(135deg,#40e0d0,#7c8cff)">林</span>
+        <div class="xun-author-info">
+          <h3>林见野 <small>城市影像</small></h3>
+          <p>专注城市探索与在地文化记录，擅长用长时间观察换取真实画面，作品节奏克制，重视环境声与自然光。</p>
+          <div class="xun-author-foot"><span>作品 <b>86</b></span><span>粉丝 <b>32.4 万</b></span><span>签约创作者</span></div>
+        </div>
+        <button class="xun-author-open" data-xun-author="林见野|城市影像|86|32.4 万|长期记录城市街区与在地文化，偏好长镜头与环境声，主张先观察再拍摄。曾参与城市取景器专题第一季与第二季，负责摄影与调色，作品多次进入焦点推荐。">档案</button>
+      </article>
+
+      <article class="xun-author-card">
+        <span class="xun-avatar" style="background:linear-gradient(135deg,#ffb454,#ff7d6b)">周</span>
+        <div class="xun-author-info">
+          <h3>周与舟 <small>人物访谈</small></h3>
+          <p>独立创作者，擅长人物访谈与幕后记录。提问直接，剪辑利落，习惯在成片里保留被采访者的停顿与犹豫。</p>
+          <div class="xun-author-foot"><span>作品 <b>54</b></span><span>粉丝 <b>21.8 万</b></span><span>年度推荐</span></div>
+        </div>
+        <button class="xun-author-open" data-xun-author="周与舟|人物访谈|54|21.8 万|独立视频创作者，专注人物访谈与创作幕后，主张让被采访者自己讲完故事。曾公开 37 版剪辑工程，分享取舍方法，被多个创作社区转载。">档案</button>
+      </article>
+
+      <article class="xun-author-card">
+        <span class="xun-avatar" style="background:linear-gradient(135deg,#7c8cff,#40e0d0)">剪</span>
+        <div class="xun-author-info">
+          <h3>剪影实验室 <small>剪辑教程</small></h3>
+          <p>三人组成的教程团队，把复杂的剪辑方法拆成可执行步骤，每期配练习素材，被新创作者称为入门必看。</p>
+          <div class="xun-author-foot"><span>作品 <b>132</b></span><span>粉丝 <b>46.2 万</b></span><span>教程类头部</span></div>
+        </div>
+        <button class="xun-author-open" data-xun-author="剪影实验室|剪辑教程|132|46.2 万|由三位剪辑师组成的教程团队，课程以案例拆解为主，提供练习素材与批改反馈，累计帮助大量新创作者完成第一支正式作品。">档案</button>
+      </article>
+
+      <article class="xun-author-card">
+        <span class="xun-avatar" style="background:linear-gradient(135deg,#8fd694,#40e0d0)">阿</span>
+        <div class="xun-author-info">
+          <h3>阿禾 <small>日常记录</small></h3>
+          <p>用镜头记录小城日常与早餐铺子，画面朴素但细节饱满，更新稳定，评论区常有人分享自己的家乡味道。</p>
+          <div class="xun-author-foot"><span>作品 <b>67</b></span><span>粉丝 <b>18.6 万</b></span><span>社区口碑</span></div>
+        </div>
+        <button class="xun-author-open" data-xun-author="阿禾|日常记录|67|18.6 万|记录小城日常与饮食手艺，坚持每周更新一支短片，重视现场环境与人物对话，内容真实温暖，社区互动活跃。">档案</button>
+      </article>
+
+      <article class="xun-author-card">
+        <span class="xun-avatar" style="background:linear-gradient(135deg,#c9a7ff,#7c8cff)">器</span>
+        <div class="xun-author-info">
+          <h3>器材笔记 <small>深度测评</small></h3>
+          <p>设备测评向创作者，坚持以对照测试说话，公开完整测试流程与原始数据，帮助用户做出理性选择。</p>
+          <div class="xun-author-foot"><span>作品 <b>98</b></span><span>粉丝 <b>27.9 万</b></span><span>专业认证</span></div>
+        </div>
+        <button class="xun-author-open" data-xun-author="器材笔记|深度测评|98|27.9 万|专注影像器材测评，所有结论基于对照测试与公开数据，不接软广，长期发布录音与镜头实测报告，被用户称为可信赖的参考来源。">档案</button>
+      </article>
+
+      <article class="xun-author-card">
+        <span class="xun-avatar" style="background:linear-gradient(135deg,#ffd166,#40e0d0)">讯</span>
+        <div class="xun-author-info">
+          <h3>讯聚吧编辑部 <small>官方发布</small></h3>
+          <p>官方内容团队，负责专题企划、企业动态与平台规范说明，发布内容均标注官方来源，接受用户反馈与监督。</p>
+          <div class="xun-author-foot"><span>作品 <b>210</b></span><span>粉丝 <b>58.1 万</b></span><span>官方账号</span></div>
+        </div>
+        <button class="xun-author-open" data-xun-author="讯聚吧编辑部|官方发布|210|58.1 万|官方网站内容团队，负责专题企划、平台规范与品牌资讯发布，所有内容标注官方来源，持续维护内容生态与社区规则。">档案</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 用户口碑 ============ -->
+<section class="xun-section" id="xun-reviews">
+  <div class="xun-wrap">
+    <div class="xun-sec-head">
+      <div>
+        <span class="xun-eyebrow">Reviews · 用户口碑</span>
+        <h2 class="xun-h2">真实评价：来自用户与创作者的声音</h2>
+        <p class="xun-sub">以下评价来自社区用户与签约创作者，内容未经改写，仅做必要格式整理。</p>
+      </div>
+    </div>
+
+    <div class="xun-review-summary">
+      <div class="xun-score"><b>4.7</b><span>/ 5 · 综合口碑</span></div>
+      <div class="xun-score-bars">
+        <div class="xun-score-row"><span>内容质量</span><div class="xun-bar"><i style="width:94%"></i></div><span>94%</span></div>
+        <div class="xun-score-row"><span>观看体验</span><div class="xun-bar"><i style="width:96%"></i></div><span>96%</span></div>
+        <div class="xun-score-row"><span>创作者支持</span><div class="xun-bar"><i style="width:91%"></i></div><span>91%</span></div>
+      </div>
+    </div>
+
+    <div class="xun-review-grid">
+      <article class="xun-review">
+        <div class="xun-review-top"><span class="xun-rv-dot" style="background:#40e0d0">陈</span><strong>陈默</strong><em>★★★★★</em></div>
+        <p>追了城市取景器两季，最打动我的是它没有急着给结论。一条街从早上到晚上，镜头就那么放着，反而让人看进去了。</p>
+        <span class="xun-rv-tag">观看时长 2 年 · 普通用户</span>
+      </article>
+
+      <article class="xun-review">
+        <div class="xun-review-top"><span class="xun-rv-dot" style="background:#ffb454">苏</span><strong>苏可</strong><em>★★★★★</em></div>
+        <p>剪辑教程是真的能跟着做，素材包下载下来直接练，比看一堆概念有用。唯一希望更新再快一点。</p>
+        <span class="xun-rv-tag">新创作者 · 学习 6 个月</span>
+      </article>
+
+      <article class="xun-review">
+        <div class="xun-review-top"><span class="xun-rv-dot" style="background:#7c8cff">老</span><strong>老周拍片</strong><em>★★★★☆</em></div>
+        <p>投稿流程比我预想的清楚，画质和版权确认都有提示，审核反馈也具体，不会只说一句不通过。就是排队时间偶尔偏长。</p>
+        <span class="xun-rv-tag">签约创作者 · 投稿 23 次</span>
+      </article>
+
+      <article class="xun-review">
+        <div class="xun-review-top"><span class="xun-rv-dot" style="background:#8fd694">林</span><strong>林小满</strong><em>★★★★★</em></div>
+        <p>喜欢这里的评论区，讨论内容本身多过争论。看完一支片再翻评论，常常能补到片子里没讲到的细节。</p>
+        <span class="xun-rv-tag">社区用户 · 活跃 1 年</span>
+      </article>
+
+      <article class="xun-review">
+        <div class="xun-review-top"><span class="xun-rv-dot" style="background:#ffd166">吴</span><strong>吴一舟</strong><em>★★★★☆</em></div>
+        <p>器材测评的对照测试很扎实，数据也公开。就是有些视频时长偏长，希望能出一个精简版。</p>
+        <span class="xun-rv-tag">普通用户 · 关注测评</span>
+      </article>
+
+      <article class="xun-review">
+        <div class="xun-review-top"><span class="xun-rv-dot" style="background:#c9a7ff">何</span><strong>何声</strong><em>★★★★★</em></div>
+        <p>作为合作方来评价：内容侧沟通顺畅，专题企划的节奏安排合理，交付标准写得很细，合作过程省了不少来回。</p>
+        <span class="xun-rv-tag">品牌合作方 · 合作 2 期</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 企业动态 ============ -->
+<section class="xun-section" id="xun-news">
+  <div class="xun-wrap">
+    <div class="xun-sec-head">
+      <div>
+        <span class="xun-eyebrow">News · 企业动态</span>
+        <h2 class="xun-h2">企业动态与官方发布</h2>
+        <p class="xun-sub">平台更新、扶持计划与社区规则的官方发布记录。</p>
+      </div>
+    </div>
+
+    <div class="xun-news-list">
+      <article class="xun-news-item">
+        <span class="xun-news-date">2026-11-18</span>
+        <div>
+          <h3>「城市取景器」第二季上线，新增 4K 高清与离线下载</h3>
+          <p>12 集正片已全部发布，支持多端观看与离线缓存，配套摄影手记同步开放。</p>
+        </div>
+        <span class="xun-news-cat">官方发布</span>
+      </article>
+      <article class="xun-news-item">
+        <span class="xun-news-date">2026-11-12</span>
+        <div>
+          <h3>2026 冬季创作者扶持计划开放报名</h3>
+          <p>面向新创作者提供设备支持与专题邀约，首批名额 200 位，报名截止至 12 月 20 日。</p>
+        </div>
+        <span class="xun-news-cat">报名中</span>
+      </article>
+      <article class="xun-news-item">
+        <span class="xun-news-date">2026-11-05</span>
+        <div>
+          <h3>创作者后台新增「脚本灵感库」与剪辑思路模板</h3>
+          <p>覆盖选题、结构与标题建议，全部免费开放，帮助创作者缩短前期准备时间。</p>
+        </div>
+        <span class="xun-news-cat">功能更新</span>
+      </article>
+      <article class="xun-news-item">
+        <span class="xun-news-date">2026-10-28</span>
+        <div>
+          <h3>社区反馈通道升级，举报处理时限缩短至 48 小时</h3>
+          <p>新增版权问题专项入口，处理进度可在个人中心查看。</p>
+        </div>
+        <span class="xun-news-cat">社区治理</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 合作品牌 + 投稿 CTA ============ -->
+<section class="xun-section" id="xun-partners">
+  <div class="xun-wrap">
+    <div class="xun-sec-head">
+      <div>
+        <span class="xun-eyebrow">Partners · 合作与共创</span>
+        <h2 class="xun-h2">合作品牌与内容共创伙伴</h2>
+        <p class="xun-sub">与企业、机构与创作团队长期合作，共同推进原创内容与公共文化项目。</p>
+      </div>
+    </div>
+
+    <div class="xun-partner-grid">
+      <div class="xun-partner">城影计划<small>城市影像共创</small></div>
+      <div class="xun-partner">声场实验室<small>音频技术支持</small></div>
+      <div class="xun-partner">青禾书店<small>文化访谈合作</small></div>
+      <div class="xun-partner">南岸剧场<small>在地内容共创</small></div>
+    </div>
+
+    <div class="xun-cta-band" style="margin-top:34px">
+      <div>
+        <h2>有故事想拍出来？从一次投稿开始</h2>
+        <p>无论你是第一次拍摄的新人，还是已经发布过作品的创作者，讯聚吧都欢迎你把内容交给我们。提交后将会收到具体的审核反馈与优化建议。</p>
+      </div>
+      <button class="xun-btn" id="xun-open-submit-cta">进入投稿入口</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="xun-section" id="xun-faq" style="border-bottom:none">
+  <div class="xun-wrap">
+    <div class="xun-sec-head">
+      <div>
+        <span class="xun-eyebrow">Help · 帮助中心</span>
+        <h2 class="xun-h2">常见问题与官方说明</h2>
+        <p class="xun-sub">关于投稿、审核、版权与观看体验的高频问题。</p>
+      </div>
+    </div>
+
+    <div class="xun-faq">
+      <details open>
+        <summary>第一次投稿需要准备哪些材料？</summary>
+        <p>需要准备高清成片文件、封面图、内容简介、标签与素材版权说明。若涉及第三方音乐或影像，请提供授权凭证。平台会在提交页面给出逐项提示，未完成的项会标注出来。</p>
+      </details>
+      <details>
+        <summary>审核一般需要多久？</summary>
+        <p>常规审核为 1 至 3 个工作日，专题企划与公益项目因涉及多方确认，可能需要 5 个工作日。审核结果会通过站内通知发送，并附具体修改建议。</p>
+      </details>
+      <details>
+        <summary>平台对画质和格式有什么要求？</summary>
+        <p>建议交付 1080P 及以上分辨率，码率不低于 8Mbps，音频采样率 48kHz。平台支持常见封装格式，上传后会自动校验并提示问题项，减少反复返工。</p>
+      </details>
+      <details>
+        <summary>如何确认素材版权没有问题？</summary>
+        <p>请确保使用的音乐、影像与字体均获得授权，并在投稿时上传凭证。平台会进行人工与系统双重检查；如发现侵权，内容会被下架并通知作者，情况严重的将暂停投稿权限。</p>
+      </details>
+      <details>
+        <summary>创作者扶持计划如何报名？</summary>
+        <p>在公告条或企业动态中找到「2026 冬季创作者扶持计划」条目，点击进入报名页填写信息并提交作品链接即可。入选结果会以站内通知与官方发布形式公布。</p>
+      </details>
+      <details>
+        <summary>观看时遇到播放问题怎么办？</summary>
+        <p>建议先切换清晰度或刷新页面；如仍无法播放，可通过页面右下角的反馈入口提交问题，注明设备与网络环境，编辑团队会在工作日响应。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="xun-footer">
+  <div class="xun-wrap">
+    <div class="xun-foot-grid">
+      <div class="xun-foot-brand">
+        <div class="xun-brand">
+          <span class="xun-brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#40e0d0" stroke-width="2.2"/><path d="M10 8.6l5.4 3.4L10 15.4z" fill="#40e0d0"/></svg>
+          </span>
+          <span class="xun-brand-text">讯聚吧<small>XUNJUBA VIDEO</small></span>
+        </div>
+        <p>讯聚吧官方网站，专注原创高清视频内容与创作者社区，坚持正版、专业与匠心，为创作者与企业搭建高品质内容生态，持续运营，陪伴成长。</p>
+      </div>
+      <div class="xun-foot-col">
+        <h4>内容</h4>
+        <a href="#xun-focus">焦点内容</a>
+        <a href="#xun-topics">专题企划</a>
+        <a href="#xun-authors">创作者</a>
+        <a href="#xun-analysis">品牌解析</a>
+      </div>
+      <div class="xun-foot-col">
+        <h4>关于</h4>
+        <a href="#xun-news">企业动态</a>
+        <a href="#xun-partners">合作品牌</a>
+        <a href="#xun-faq">帮助中心</a>
+        <a href="#xun-reviews">用户口碑</a>
+      </div>
+      <div class="xun-foot-col">
+        <h4>联系</h4>
+        <span>合作邮箱：hello@xunjuba.com</span>
+        <span>投稿咨询：工作日 10:00-18:00</span>
+        <button class="xun-icon-btn" id="xun-open-submit-foot" style="margin-top:8px">投稿与反馈入口</button>
+      </div>
+    </div>
+    <div class="xun-foot-bottom">
+      <span>© 2026 讯聚吧 官方网站 · 版权所有 · 持续运营中</span>
+      <span>原创内容平台 · 高清正版 · 用户至上</span>
+      <span>备案号：备 2026001122 号</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ 通用弹窗 ============ -->
+<div class="xun-modal-mask" id="xun-modal-mask">
+  <div class="xun-modal" id="xun-modal" role="dialog" aria-modal="true" aria-labelledby="xun-modal-title">
+    <button class="xun-modal-close" id="xun-modal-close" aria-label="关闭">✕</button>
+    <h3 id="xun-modal-title">投稿入口</h3>
+    <p class="xun-modal-sub" id="xun-modal-sub">填写基本信息，我们会在 3 个工作日内回复。</p>
+    <div id="xun-modal-body"></div>
+  </div>
+</div>
+
+<div class="xun-toast" id="xun-toast">已复制</div>
+<button class="xun-top-btn" id="xun-top-btn" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 工具 ---------- */
+  var $ = function(s,ctx){return (ctx||document).querySelector(s);};
+  var $$ = function(s,ctx){return Array.prototype.slice.call((ctx||document).querySelectorAll(s));};
+  var toastEl = $("#xun-toast");
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("xun-on");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){toastEl.classList.remove("xun-on");},1900);
+  }
+
+  /* ---------- 吸顶高度自适应（公告条可折叠） ---------- */
+  var stickyShell = $("#xun-sticky");
+  function syncStickyOffset(){
+    var h = stickyShell.offsetHeight;
+    document.documentElement.style.setProperty("--xun-sticky", (h + 12) + "px");
+  }
+  window.addEventListener("resize", syncStickyOffset);
+  syncStickyOffset();
+
+  /* ---------- 公告条轮播 + 收起 ---------- */
+  var noticeItems = $$("#xun-notice-track .xun-notice-item");
+  var noticeIdx = 0;
+  var noticeTimer = null;
+  function startNotice(){
+    if(noticeItems.length < 2) return;
+    noticeTimer = setInterval(function(){
+      noticeItems[noticeIdx].classList.remove("xun-on");
+      noticeIdx = (noticeIdx + 1) % noticeItems.length;
+      noticeItems[noticeIdx].classList.add("xun-on");
+    }, 4800);
+  }
+  startNotice();
+  $("#xun-notice-close").addEventListener("click", function(){
+    $("#xun-notice").classList.add("xun-collapsed");
+    clearInterval(noticeTimer);
+    syncStickyOffset();
+  });
+
+  /* ---------- 移动端导航折叠 ---------- */
+  var navToggle = $("#xun-nav-toggle");
+  var mobileNav = $("#xun-mobile-nav");
+  navToggle.addEventListener("click", function(){
+    var open = mobileNav.classList.toggle("xun-on");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    syncStickyOffset();
+  });
+  $$("#xun-mobile-nav a").forEach(function(a){
+    a.addEventListener("click", function(){
+      mobileNav.classList.remove("xun-on");
+      navToggle.setAttribute("aria-expanded","false");
+      syncStickyOffset();
+    });
+  });
+
+  /* ---------- 搜索提示反馈 ---------- */
+  var searchData = [
+    "城市取景器 第二季",
+    "剪影实验室 剪辑教程",
+    "器材笔记 麦克风测评",
+    "幕后的一百小时",
+    "新手创作者手册",
+    "阿禾 早餐地图",
+    "周与舟 创作者访谈",
+    "讯聚吧官方发布"
+  ];
+  function bindSearch(wrapId){
+    var wrap = $(wrapId);
+    if(!wrap) return;
+    var input = $("input", wrap);
+    var tip = $(".xun-search-tip", wrap);
+    if(!tip){
+      tip = document.createElement("div");
+      tip.className = "xun-search-tip";
+      wrap.appendChild(tip);
+    }
+    function render(kw){
+      var list = searchData.filter(function(t){return t.toLowerCase().indexOf(kw.toLowerCase()) > -1;});
+      if(!list.length){
+        tip.innerHTML = '<p style="cursor:default">暂未找到「'+escapeHtml(kw)+'」相关内容，试试“城市”或“教程”</p>';
+      }else{
+        tip.innerHTML = list.slice(0,5).map(function(t){
+          return '<p data-kw="'+escapeHtml(t)+'">'+escapeHtml(t)+'</p>';
+        }).join("");
+      }
+      tip.classList.add("xun-on");
+    }
+    input.addEventListener("input", function(){
+      var kw = input.value.trim();
+      if(!kw){ tip.classList.remove("xun-on"); return; }
+      render(kw);
+    });
+    input.addEventListener("focus", function(){
+      if(input.value.trim()) render(input.value.trim());
+    });
+    tip.addEventListener("click", function(e){
+      var p = e.target.closest("p[data-kw]");
+      if(!p) return;
+      input.value = p.getAttribute("data-kw");
+      tip.classList.remove("xun-on");
+      toast("已为你定位：" + input.value);
+    });
+    $("button", wrap).addEventListener("click", function(){
+      var kw = input.value.trim();
+      if(!kw){ toast("请输入搜索关键词"); return; }
+      render(kw);
+      toast("正在搜索：" + kw);
+    });
+    document.addEventListener("click", function(e){
+      if(!wrap.contains(e.target)) tip.classList.remove("xun-on");
+    });
+  }
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+  bindSearch("#xun-search-desktop");
+  bindSearch("#xun-search-mobile");
+
+  /* ---------- 点赞 +1/-1 ---------- */
+  $$("[data-xun-like]").forEach(function(btn){
+    var base = parseInt(btn.getAttribute("data-xun-base"),10) || 0;
+    var on = false;
+    var numEl = $(".xun-like-num", btn);
+    function fmt(n){
+      if(n >= 10000) return (n/10000).toFixed(1) + " 万";
+      return String(n);
+    }
+    btn.addEventListener("click", function(){
+      on = !on;
+      var n = base + (on ? 1 : 0);
+      numEl.textContent = fmt(n);
+      btn.classList.toggle("xun-active", on);
+      toast(on ? "已点赞" : "已取消点赞");
+    });
+  });
+
+  /* ---------- 收藏切换 ---------- */
+  $$("[data-xun-fav]").forEach(function(btn){
+    var on = false;
+    btn.addEventListener("click", function(){
+      on = !on;
+      btn.classList.toggle("xun-active", on);
+      btn.lastChild.textContent = on ? " 已收藏" : " 收藏";
+      toast(on ? "已加入收藏" : "已取消收藏");
+    });
+  });
+
+  /* ---------- 弹窗系统 ---------- */
+  var mask = $("#xun-modal-mask");
+  var modalTitle = $("#xun-modal-title");
+  var modalSub = $("#xun-modal-sub");
+  var modalBody = $("#xun-modal-body");
+  function openModal(title, sub, html){
+    modalTitle.textContent = title;
+    modalSub.textContent = sub || "";
+    modalBody.innerHTML = html;
+    mask.classList.add("xun-on");
+  }
+  function closeModal(){ mask.classList.remove("xun-on"); }
+  $("#xun-modal-close").addEventListener("click", closeModal);
+  mask.addEventListener("click", function(e){ if(e.target === mask) closeModal(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
+
+  /* ---------- 分享弹窗 ---------- */
+  function bindShare(btn){
+    btn.addEventListener("click", function(){
+      var title = btn.getAttribute("data-xun-share") || document.title;
+      openModal("分享这支视频", "选择平台或复制链接，把内容分享给更多人。", 
+        '<div class="xun-share-row">'+
+        '<button data-share="wechat">微信</button>'+
+        '<button data-share="weibo">微博</button>'+
+        '<button data-share="qq">QQ</button>'+
+        '</div>'+
+        '<div class="xun-modal-actions">'+
+        '<button class="xun-btn xun-btn-ghost" id="xun-copy-link">复制链接</button>'+
+        '</div>'+
+        '<p style="font-size:12px;color:#95a4bf;margin-top:14px">分享内容：'+escapeHtml(title)+'</p>'
+      );
+      $$("#xun-modal-body [data-share]").forEach(function(b){
+        b.addEventListener("click", function(){
+          toast("已生成" + b.textContent + "分享内容");
+          closeModal();
+        });
+      });
+      var copyBtn = $("#xun-copy-link");
+      if(copyBtn){
+        copyBtn.addEventListener("click", function(){
+          var link = "https://www.xunjuba.com/video/focus-01";
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(link).then(function(){
+              toast("链接已复制到剪贴板");
+              closeModal();
+            }).catch(function(){
+              toast("复制失败，请手动复制");
+            });
+          }else{
+            var ta = document.createElement("textarea");
+            ta.value = link;
+            document.body.appendChild(ta);
+            ta.select();
+            try{ document.execCommand("copy"); toast("链接已复制"); }catch(e){ toast("复制失败，请手动复制"); }
+            document.body.removeChild(ta);
+            closeModal();
+          }
+        });
+      }
+    });
+  }
+  $$("[data-xun-share]").forEach(bindShare);
+
+  /* ---------- 反馈 / 举报弹窗 ---------- */
+  $$("[data-xun-report]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var target = btn.getAttribute("data-xun-report");
+      openModal("反馈与举报", "我们会在工作日内处理，请描述具体问题。",
+        '<label>问题类型</label>'+
+        '<select id="xun-report-type"><option>内容质量问题</option><option>版权问题</option><option>播放异常</option><option>其他</option></select>'+
+        '<label>涉及内容</label>'+
+        '<input id="xun-report-target" value="'+escapeHtml(target)+'" readonly>'+
+        '<label>补充说明</label>'+
+        '<textarea id="xun-report-text" placeholder="请描述遇到的问题，便于我们快速定位"></textarea>'+
+        '<div class="xun-modal-actions">'+
+        '<button class="xun-btn" id="xun-report-submit">提交反馈</button>'+
+        '<button class="xun-btn xun-btn-ghost" id="xun-report-cancel">取消</button>'+
+        '</div>'
+      );
+      $("#xun-report-submit").addEventListener("click", function(){
+        var txt = $("#xun-report-text").value.trim();
+        if(!txt){ toast("请填写补充说明"); return; }
+        closeModal();
+        toast("反馈已提交，感谢你的帮助");
+      });
+      $("#xun-report-cancel").addEventListener("click", closeModal);
+    });
+  });
+
+  /* ---------- 作者档案弹窗 ---------- */
+  $$("[data-xun-author]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var parts = btn.getAttribute("data-xun-author").split("|");
+      var name = parts[0], field = parts[1], works = parts[2], fans = parts[3], bio = parts[4];
+      openModal(name + " · 创作者档案", field + " · 签约创作者",
+        '<div style="display:flex;gap:14px;align-items:center;margin-bottom:16px">'+
+          '<span style="width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:20px;font-weight:900;color:#06231f;background:linear-gradient(135deg,#40e0d0,#7c8cff);flex:none">'+escapeHtml(name.charAt(0))+'</span>'+
+          '<div><strong style="font-size:15px">'+escapeHtml(name)+'</strong><div style="font-size:12.5px;color:#95a4bf">作品 '+escapeHtml(works)+' · 粉丝 '+escapeHtml(fans)+'</div></div>'+
+        '</div>'+
+        '<p style="font-size:13.5px;color:#bcc9df;line-height:1.9">'+escapeHtml(bio)+'</p>'+
+        '<div class="xun-modal-actions">'+
+        '<button class="xun-btn" id="xun-follow-author">关注创作者</button>'+
+        '<button class="xun-btn xun-btn-ghost" id="xun-author-close">关闭</button>'+
+        '</div>'
+      );
+      var follow = $("#xun-follow-author");
+      var followed = false;
+      follow.addEventListener("click", function(){
+        followed = !followed;
+        follow.textContent = followed ? "已关注" : "关注创作者";
+        toast(followed ? "已关注 " + name : "已取消关注");
+      });
+      $("#xun-author-close").addEventListener("click", closeModal);
+    });
+  });
+
+  /* ---------- 投稿入口弹窗 ---------- */
+  function openSubmitModal(){
+    openModal("投稿入口", "提交基本信息后，我们会在 3 个工作日内回复审核意见。",
+      '<label>创作者昵称</label>'+
+      '<input id="xun-sub-name" placeholder="你希望展示的名字">'+
+      '<label>作品类型</label>'+
+      '<select id="xun-sub-type"><option>城市探索 / 在地记录</option><option>人物访谈 / 幕后</option><option>教程干货</option><option>深度测评</option><option>日常记录</option><option>其他</option></select>'+
+      '<label>作品简介</label>'+
+      '<textarea id="xun-sub-desc" placeholder="简单介绍内容主题、时长与拍摄方式"></textarea>'+
+      '<label>联系方式</label>'+
+      '<input id="xun-sub-contact" placeholder="邮箱或常用联系方式">'+
+      '<div class="xun-modal-actions">'+
+      '<button class="xun-btn" id="xun-sub-submit">提交投稿</button>'+
+      '<button class="xun-btn xun-btn-ghost" id="xun-sub-cancel">稍后再填</button>'+
+      '</div>'
+    );
+    $("#xun-sub-submit").addEventListener("click", function(){
+      var name = $("#xun-sub-name").value.trim();
+      var desc = $("#xun-sub-desc").value.trim();
+      var contact = $("#xun-sub-contact").value.trim();
+      if(!name || !desc || !contact){ toast("请完整填写昵称、简介与联系方式"); return; }
+      closeModal();
+      toast("投稿已提交，请留意站内通知");
+    });
+    $("#xun-sub-cancel").addEventListener("click", closeModal);
+  }
+  ["#xun-open-submit-top","#xun-open-submit-hero","#xun-open-submit-cta","#xun-open-submit-foot"].forEach(function(id){
+    var el = $(id);
+    if(el) el.addEventListener("click", openSubmitModal);
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  var counted = false;
+  function countUp(){
+    if(counted) return;
+    counted = true;
+    $$("[data-xun-count]").forEach(function(el){
+      var target = parseInt(el.getAttribute("data-xun-count"),10);
+      var start = null;
+      var dur = 1400;
+      function step(ts){
+        if(!start) start = ts;
+        var p = Math.min((ts - start)/dur, 1);
+        var eased = 1 - Math.pow(1-p, 3);
+        var val = Math.floor(target * eased);
+        el.textContent = val.toLocaleString("zh-CN");
+        if(p < 1) requestAnimationFrame(step);
+        else el.textContent = target.toLocaleString("zh-CN");
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting) countUp(); });
+    }, {threshold:.3});
+    var statsEl = $(".xun-stats");
+    if(statsEl) io.observe(statsEl);
+  }else{
+    countUp();
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = $("#xun-top-btn");
+  window.addEventListener("scroll", function(){
+    if(window.scrollY > 620) topBtn.classList.add("xun-on");
+    else topBtn.classList.remove("xun-on");
+  }, {passive:true});
+  topBtn.addEventListener("click", function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  /* ---------- 卡片悬停增强（键盘可达） ---------- */
+  $$(".xun-focus-main, .xun-author-card, .xun-topic-card, .xun-vid-item").forEach(function(card){
+    card.addEventListener("focusin", function(){ card.classList.add("xun-hover"); });
+    card.addEventListener("focusout", function(){ card.classList.remove("xun-hover"); });
+  });
+
+})();
+</script>
+</body>
+  </html>
